@@ -14,8 +14,13 @@ const osuApi = new osu.Api('', osuToken, {
 });
 
 async function test() {
+
 	osuApi.getScores({ u: _user, b: _beatmap }).then(item => {
 		console.log(JSON.stringify(item[0]));
+	});
+
+	osuApi.getUser({ u: _user}).then(item => {
+		console.log(JSON.stringify(item));
 	});
 }
 
